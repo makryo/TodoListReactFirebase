@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Todo from './Todo';
 
 
 const Form = (props) => {
@@ -9,6 +10,16 @@ const Form = (props) => {
     const increId=()=>{
         setId(id + 1)
         return id;
+    }
+    
+    //const valid = JSON.parse(localStorage.getItem('todos'));
+    //console.log(valid[props.edit.id]);
+
+    const [idUp, setIdUp] = useState(10);
+    const updateId=()=>{
+        setIdUp(idUp +1)
+        return idUp;
+        console.log(idUp);
     }
 
     const inputRef = useRef(null);
@@ -21,7 +32,7 @@ const Form = (props) => {
         setInput(e.target.value);
     };
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         props.onSubmit({
@@ -31,9 +42,19 @@ const Form = (props) => {
         setInput('');
     };
 
+    const handleSubmitUpdate = (e) => {
+        e.preventDefault();
+
+        props.onSubmit({
+            id: updateId(),
+            text: input
+        });
+        setInput('');
+    };
+
 
   return (
-    <form onSubmit={handleSubmit} className='todo-form'>
+    <form onSubmit={handleSubmitUpdate} className='todo-form'>
         {props.edit ? (
             <>
                 <input
@@ -43,8 +64,9 @@ const Form = (props) => {
                     name='text'
                     ref={inputRef}
                     className='todo-input edit'
+                    required
                 />
-                <button onClick={handleSubmit} className='todo-button edit'>Actualizar</button>
+                <button onClick={handleSubmitUpdate} className='todo-button edit'>Actualizar</button>
             </>
         ):(
             <>
@@ -55,6 +77,7 @@ const Form = (props) => {
                     name='text'
                     className='todo-input'
                     ref={inputRef}
+                    required
                 />
                 <button onClick={handleSubmit} className='todo-button'>Agregar</button>
             </>

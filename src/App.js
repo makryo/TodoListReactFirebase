@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Main/Main';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Register from'./components/OAuth/Register';
+//import Main from './components/Main/Main';
+
+
 function App() {
   return (
     <div className='todo-app'>
-      <Main />
+      <Register />
     </div>
   );
 }

@@ -7,6 +7,7 @@ function Main(){
 
     const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')));
 
+
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos]);
@@ -45,9 +46,14 @@ function Main(){
         setTodos(updatedTodos);
     };
 
+    let nom = localStorage.getItem("usersName").replace(/"/g, "");
     return (
         <>
-            <h1>Cuales son tus tareas para hoy</h1>
+            <br></br>
+            <br></br>
+            <h1>Hola {nom} cuales son tus tareas para hoy</h1>
+            <br></br>
+
             <Form onSubmit={addTodo} />
             <Todo 
                 todos={todos}
@@ -56,6 +62,8 @@ function Main(){
                 removeTodo={removeTodo}
                 updateTodo={updateTodo}
             />
+
+            <button className='todo-button-logout'>Logout</button>
         </>
     );
 }

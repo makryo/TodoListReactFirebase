@@ -1,3 +1,4 @@
+/* ------------todo style-------------*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -68,6 +69,21 @@ h1 {
   );
   color: #fff;
   text-transform: capitalize;
+}
+
+.todo-button-logout {
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  background: linear-gradient(
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+  
 }
 
 .todo-input.edit {
@@ -145,3 +161,79 @@ h1 {
 .edit-icon {
   color: #fff;
 }
+
+/* -------- login style -------------*/
+
+*{
+  margin: 0;
+}
+.navbar-light {
+  color: azure;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.navbar-light > .container{
+
+  text-align: center;
+  
+}
+.navbar-light > .container > h4{
+    background-color: black;
+    font-weight: bold;
+    width: 180px;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+p{
+  font-size: large;
+}
+
+
+  .outer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .inner {
+    width: 450px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+  }
+  
+  .outer .form-control:focus {
+    border-color: #167bff;
+    box-shadow: none;
+  }
+  
+  .outer h3 {
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+  }
+  
+  label{
+    font-weight: 600;
+  }
+  .forgot-password,
+  .forgot-password{
+    text-align: right;
+    font-size: 13px;
+    padding-top: 10px;
+    color: #7f7d7d;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .forgot-password a {
+    color: #167bff;
+  }
